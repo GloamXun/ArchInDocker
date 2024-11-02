@@ -1,7 +1,7 @@
 FROM archlinux:latest
 
-ENV ROOT_PASSWORD=your_code
-ENV CODE_SERVER_PASSWORD=your_code
+ENV ROOT_PASSWORD=your_password
+ENV CODE_SERVER_PASSWORD=your_password
 
 RUN pacman -Sy --noconfirm && \
     pacman -S --noconfirm openssh sudo git base-devel
