@@ -6,10 +6,11 @@ This project can help you to build a remote production environment as fast as po
 ## How to Use It
 
 * `git clone` this repository and `cd` into it.
-* review the `Dockerfile` and replace `your_password` after the `ROOT_PASSWORD` and `CODE_SERVER_PASSWORD` at line 3 and 4
+* review the `Dockerfile` and replace `your_password` after the `ROOT_PASSWORD`, `CODE_SERVER_PASSWORD` and `your_username` after `USER` at line 3, 4 and 5
+* replace `your_username` after the `USERNAME` in file `start_services.sh` and make sure that `USERNAME` is equal to `USER` in `Dockerfile`
 * run the command (don't miss the dot behind):
   `docker build -t whatever-your-image-name:tag .`
 * feel free to create your own container, just remember that this image opens port `22` and `8080` to support SSH and code-server services.
 
 ## Notice
-This image has a user called `code` and the password of user `code` is as same as `root` which you've given it at line 3. If you don't like it, you can fix it in Dockerfile. Finally, `PermitRootLogin` is not allowed, please use `code` to login.
+The password of `USER` is as same as `root` which you've given it at line 3. Finally, `PermitRootLogin` is not allowed, please use `USER` to login.
